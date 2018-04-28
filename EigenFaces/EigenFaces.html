@@ -11771,6 +11771,23 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>Author: Yi Li</p>
+<p>This notebook uses PCA to do dimension reduction on 400 face images (each one has 10304 pixels) to find the top k eigenfaces. After compressing images (dimension reduction), I find the most similar face image of a given face image by calculating the euclidian distance between each pair of the given image and the others in the database.</p>
+<h3 id="PCA-explanation">PCA explanation<a class="anchor-link" href="#PCA-explanation">&#182;</a></h3><p>$A$ is a $10304*400$ matrix, which represents the data of 400 face images (each one has 10304 pixels).</p>
+<p>$C = AA^T$ is a $10304*10304$ matrix,</p>
+<p>$C' = A^TA$ is a $400*400$ matrix.</p>
+<p>$A^TAV = \lambda V$, $V$ is the eigenvectors $(400*400)$ for the matrix $A^TA$, that is, $C'$.</p>
+<p>Using PCA and choose top $k$ eigenvectors, then $V$ becomes a $400*k$ matirx.</p>
+<p>$(AA^T)(AV) = \lambda(AV)$, $AV$ is the eigenvectors for the matrix $AA^T$, that is, $C$.</p>
+<p>$AV$ is called eigenfaces. $A$ times the top $k$ eigenvectors of $V$, then $AV$ becomes a $10304*k$ matirx.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
@@ -14362,6 +14379,7 @@ pZS3z6RvT0n6UkR823rTvTpaI3HyvuloivldEXFpfX/v1ZHhZ9q+vdTKrlGAf0TSn0v6X5L+zYT9
 
 <span class="c1">## Find the image with the smallest Euclidean distance</span>
 <span class="n">num_file</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">dist</span><span class="p">))</span>
+<span class="c1">#num_file = dist.index(sorted(dist)[1])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Find Closest File Number: &quot;</span><span class="p">,</span> <span class="n">num_file</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Distance: &quot;</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">dist</span><span class="p">))</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">paths</span><span class="p">[</span><span class="n">num_file</span><span class="p">])</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -15809,19 +15827,6 @@ bSjAP5nkK0m+muT/mOM83pmNLccXk9y7+e8nk7wiG0aNh5L8aZLL5rxeP56pcWUh5pbkLUnu2ly7
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="PCA-explanation">PCA explanation<a class="anchor-link" href="#PCA-explanation">&#182;</a></h3><p>$C = AA^T$ is a $10304*10304$ matrix,
- $C’ = A^TA$ is a $400*400$ matrix.</p>
-<p>$A^TAV = wV$, $V$ is the eigenvectors $(400*400)$ for the matrix $A^TA$, that is, $C’$.</p>
-<p>Using PCA and choose top $k$ eigenvectors, then $V$ becomes a $400*k$ matirx.
- $(AA^T)(AV) = w(AV)$, $AV$ is the eigenvectors for the matrix $AA^T$, that is, $C$. $AV$ is also called eigenfaces. $AV$ is a $10304*k$ matrix.</p>
-
-</div>
-</div>
 </div>
     </div>
   </div>
