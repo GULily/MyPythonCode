@@ -11777,8 +11777,8 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>Author: Yi Li</p>
 <p><strong>Data Source:</strong> The raw lending club loan data is downloaded from the website <a href="https://www.lendingclub.com/info/download-data.action">Lending Club Statistics</a>.</p>
-<p><strong>Project Purpose:</strong> This project trys to predict whether a user is going to default on his or her loan. This is meaningful, because if we can predict and target these people, we can take actions earlier and reduce the default rate of a company.</p>
-<p><strong>Method &amp; Results:</strong> After lots of data exploration, data cleaning and feature enginerring, I extracted 60+ features (110+ features after one-hot encoding for categorical features) from the original 150+ features. I defined the target "default" as any user whose loan status is past due (not "Current" and not "Fully Paid"). I split the cleaned dataset as a training dataset (70%) and a test dataset (30%).</p>
+<p><strong>Purpose:</strong> The purpose of this project is to predict whether a user is going to default on his or her loan. This is meaningful, because if we can predict and target these people, we can take actions earlier and reduce the default rate of a company.</p>
+<p><strong>Method &amp; Results:</strong> After lots of data exploration, data cleaning and feature engineering, I extracted 60+ features (110+ features after one-hot encoding for categorical features) from the original 150+ features. I defined the target "default" as any user whose loan status is past due (not "Current" and not "Fully Paid"). I split the cleaned dataset as a training dataset (70%) and a test dataset (30%).</p>
 <p>I used two models:</p>
 
 <pre><code>(a) a logistic classifier with regularization (Lasso) to control multilinear problem 
@@ -11798,8 +11798,7 @@ Top features:
 
 
 </code></pre>
-<p><strong>Conclusion</strong>: Generally speaking, the results of model (b) is better than model (a).</p>
-<p>The top features achieved from two models are very different. They only share one common feature 'last_credit_pull_d_since_issue' (the number of days from last time pull credit since issue). Other important features including 'pymnt_plan' (which is "yes" or "no"), 'log_loan_amnt' (the log of loan amount), 'disbursement_method' (cash or directed pay), 'term'(36 or 60 months), 'next_pymnt_d_since_issue', 'last_pymnt_d_since_issue', 'out_prncp'(remaining outstanding principal for total amount funded), 'last_pymnt_amnt'.</p>
+<p><strong>Conclusion</strong>: The results of model (b) is better than model (a). The top features achieved from two models are very different. <em>The logistic classifier prefers categorical features while the random forest classifier prefers numerical features.</em> They only share one common feature 'last_credit_pull_d_since_issue' (the number of days from last time pull credit since issue). Other important features including 'pymnt_plan' (which is "yes" or "no"), 'log_loan_amnt' (the log of loan amount), 'disbursement_method' (cash or directed pay), 'term'(36 or 60 months), 'next_pymnt_d_since_issue', 'last_pymnt_d_since_issue', 'out_prncp'(remaining outstanding principal for total amount funded), 'last_pymnt_amnt'.</p>
 
 </div>
 </div>
