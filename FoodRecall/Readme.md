@@ -1,9 +1,7 @@
 ## Food Recall Analysis
 
-__Tableau Vis Link:__ https://public.tableau.com/profile/yi1507#!/vizhome/ANLY-501Project/RecalledFoodDataAnalysis
-
 __Introduction__:
-We scraped data from the Food and Drug Administration (FDA), which provides monitored food product recalls. 
+We scraped data from the Food and Drug Administration (FDA, https://open.fda.gov/food/enforcement/), which provides monitored food product recalls. 
 According to FDA's own definition, "Class I" recall involves a health hazard situation in which there is a 
 reasonable probability that eating the food will cause health problems or death. So in this project, 
 we focus on "Class I" recalls. We also want to focus on recalled foods produced in US only, 
@@ -24,13 +22,16 @@ This project answers the following questions:
   <img src="https://github.com/GULily/Projects/blob/master/FoodRecall/TopicModeling2.png" width="400"/>
 </p>
 
-__Scrape.py:__ Scrape food recall records from FDA (https://open.fda.gov/food/enforcement/)
-with queries 'classification:"Class+I"' and 'status:"Terminated"'. 
-The results are in the files "ScrapeClassI.csv" and "ScrapeTerminated.csv".
+Here are the six topics we created. The words in red represent the causes; the words in orange represent the kinds of food or product; the words in blue represent the recalling firms or recalling firms' location (state or city). Among the six topics, five of them mention "listeria monocytogenes", and two of them mention "salmonella". Companies like Dole Fresh Vegetables, Blue Bell Creameries, Garden-Fresh Foods, and Sunopta Food and Grain seem to be the main recalling firms.
 
-__DataCleaning.ipynb:__ Clean and combine data sets.
+<p align="center">
+  <img src="https://github.com/GULily/Projects/blob/master/FoodRecall/Table.png" width="400"/>
+  <img src="https://github.com/GULily/Projects/blob/master/FoodRecall/Map.png" width="450"/>
+</p>
 
-__Topic_modeling.py:__ Use latent Dirichlet allocation (LDA) generate 6 topics. 
+__Tableau Vis Link:__ https://public.tableau.com/profile/yi1507#!/vizhome/ANLY-501Project/RecalledFoodDataAnalysis
+
+Note: For the Map of Problem Types, we did not normalize the data based on the population of food companies of each state.
 
 
 
