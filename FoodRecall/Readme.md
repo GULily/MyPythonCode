@@ -15,6 +15,13 @@ This project answers the following questions:
 * What's the relationship between different problem types and food types?
 * Which states have the most serious recalls?
 
+<p align="center">
+  <img src="https://github.com/GULily/Projects/blob/master/FoodRecall/Wordcloud.png" width="300"/>
+  <img src="https://github.com/GULily/Projects/blob/master/FoodRecall/TopicModeling.png" width="400"/>
+</p>
+
+
+
 __Scrape.py:__ Scrape food recall records from FDA (https://open.fda.gov/food/enforcement/)
 with queries 'classification:"Class+I"' and 'status:"Terminated"'. 
 The results are in the files "ScrapeClassI.csv" and "ScrapeTerminated.csv".
