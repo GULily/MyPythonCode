@@ -17,10 +17,12 @@ This project answers the following questions:
 
 <p align="center">
   <img src="https://github.com/GULily/Projects/blob/master/FoodRecall/Wordcloud.png" width="300"/>
-  <img src="https://github.com/GULily/Projects/blob/master/FoodRecall/TopicModeling.png" width="400"/>
 </p>
 
-
+<p align="center">
+  <img src="https://github.com/GULily/Projects/blob/master/FoodRecall/TopicModeling.png" width="400"/>
+  <img src="https://github.com/GULily/Projects/blob/master/FoodRecall/TopicModeling2.png" width="400"/>
+</p>
 
 __Scrape.py:__ Scrape food recall records from FDA (https://open.fda.gov/food/enforcement/)
 with queries 'classification:"Class+I"' and 'status:"Terminated"'. 
