@@ -1,3 +1,3 @@
 ## Projects
 
-Each file is a project.
+Each folder is a project.
