@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import urllib.request
 import re
 
-with open("hofstra.csv", "w", encoding="utf-8") as f:
+with open("data/hofstra_courses.csv", "w", encoding="utf-8") as f:
     f.write('institute' + ',' + 'category' + ',' + 'course_num' + ',' + 'course_name' + ',' +
             'credit' + ',' + 'semester' + ',' + 'description' + "\n")
 

@@ -12,7 +12,7 @@ resp = requests.get(start_url)  # .content.decode()
 soup = BeautifulSoup(resp.content, "html.parser")
 # print(soup)
 
-with open("udacity2.txt", "w", encoding="utf-8") as f:
+with open("data/udacity_courses.txt", "w", encoding="utf-8") as f:
     f.write('course_name' + '|' + 'url' + '|' + 'level' + '|' + 'description' + '\n')
     for title in soup.find_all("h3", class_="h-slim"):   #.get_text()
         # print(title)

@@ -9,7 +9,7 @@ import requests
 
 
 
-with open("harvard_extension2.txt", "w", encoding="utf-8") as f:     # raw_unicode_escape
+with open("data/harvard_courses.txt", "w", encoding="utf-8") as f:     # raw_unicode_escape
     f.write('course_name' + '|' + 'professor' + '|' + 'url' + '|' + 'description' + '|' + 'term' + '|' + 'online' + '|' + 'course_num' + "\n")
     for i in range(1, 44):
         start_url = "https://www.extension.harvard.edu/academics/courses/course-catalog?search_api_views_fulltext=&page=" + str(i)
